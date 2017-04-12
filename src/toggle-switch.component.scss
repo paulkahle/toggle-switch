@@ -1,0 +1,80 @@
+@import '../node_modules/suprematism-style-guide/dist/utils/_colors.scss';
+
+:host{
+  display:inline-block;
+  position:relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow:hidden;
+  z-index:2;
+  cursor:pointer;
+  line-height:2.6em;
+  height:2.6em;
+  font-family: system-ui;
+
+
+  label{
+    cursor:pointer;
+    font-size:inherit !important;
+    line-height:inherit !important;
+  }
+
+  input{
+    display:none;
+  }
+
+  .on-label, .off-label{
+
+    font-weight:bold;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    position:relative;
+    padding:0 1em;
+    text-align: center;
+    transition: transform .25s;
+    color:white;
+    word-break: normal;
+    display:block;
+  }
+  .on-label{
+    background-color:$aqua;
+    text-align: left;
+    transform: translateX(-100%);
+    padding-right:3.5em;
+  }
+  .off-label{
+    background-color:$blue-gray;
+    text-align: right;
+    transform: translateY(-100%) translateX(0%);
+    padding-left:3em;
+  }
+
+  input + *:after{
+    content : ' ';
+    display:inline-block;
+    position:absolute;
+    width:calc(2.6em - 4px);
+    background-color: $white;
+    border-radius: 4px;
+    line-height:1px;
+    top:2px;
+    bottom:2px;
+    left:2px;
+    transition: left .25s, opacity .25s;
+    opacity:.8;
+  }
+
+  input:checked + * {
+    .on-label{
+      transform: translateX(0%);
+    }
+    .off-label{
+      transform: translateY(-100%) translateX(100%);
+    }
+    &:after{
+      left:calc((100% - 2.6em) + 2px);
+      opacity: 1;
+    }
+  }
+
+}

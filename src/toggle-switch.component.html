@@ -1,0 +1,7 @@
+<label>
+  <input type="checkbox" [checked]="toggled" (click)="handleClick($event)" />
+  <span>
+    <span class="on-label" ><ng-content select="[onLabel]"></ng-content></span>
+    <span class="off-label"><ng-content select="[offLabel]"></ng-content></span>
+  </span>
+</label>

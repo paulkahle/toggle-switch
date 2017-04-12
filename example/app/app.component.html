@@ -1,0 +1,12 @@
+<h3>Toggle Switch</h3>
+
+<supre-toggle-switch
+  class="u-type-s"
+  [toggled]="isActive"
+  (toggle)="handleToggle($event)"
+  >
+  <div onLabel><span class="u-supre-icon u-supre-icon--snapshot"></span> Active</div>
+  <div offLabel>InActive <span class="u-supre-icon u-supre-icon--edit"></span></div>
+</supre-toggle-switch>
+
+<div>Toggled? {{isActive}}</div>
